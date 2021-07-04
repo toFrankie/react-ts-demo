@@ -11,22 +11,9 @@
     <%= htmlWebpackPlugin.options.title %>
   </title>
   <script>
-    !function (n, e) {
-      var t = n.documentElement;
-      var i = 'orientationchange' in window ? 'orientationchange' : 'resize';
-      var d = function () {
-        var n = t.clientWidth;
-        if (n) {
-          var e = 50 * (n / 375);
-          e = e > 54 ? 54 : e;
-          t.style.fontSize = e + 'px';
-        }
-      }
-      if (n.addEventListener) {
-        e.addEventListener(i, d, !1);
-        n.addEventListener('DOMContentLoaded', d, !1);
-      }
-    }(document, window);
+    // https://github.com/pmmmwh/react-refresh-webpack-plugin/issues/176#issuecomment-683150213
+    window.$RefreshReg$ = function() {};
+    window.$RefreshSig$ = function() {};
   </script>
 </head>
 

@@ -1,13 +1,14 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpack = require('webpack')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   target: 'web',
   mode: 'none',
   devtool: 'eval-source-map',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
 
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -36,6 +37,7 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
 
     new CleanWebpackPlugin(),
 
@@ -56,7 +58,15 @@ module.exports = {
       {
         test: /\.js|jsx$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              // cacheDirectory: true,
+              plugins: [require.resolve('react-refresh/babel')]
+            }
+          }
+        ]
       }
     ]
   }
