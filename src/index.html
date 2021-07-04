@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="Cache-Control" content="private">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <script>
+    !function (n, e) {
+      var t = n.documentElement;
+      var i = 'orientationchange' in window ? 'orientationchange' : 'resize';
+      var d = function () {
+        var n = t.clientWidth;
+        if (n) {
+          var e = 50 * (n / 375);
+          e = e > 54 ? 54 : e;
+          t.style.fontSize = e + 'px';
+        }
+      }
+      if (n.addEventListener) {
+        e.addEventListener(i, d, !1);
+        n.addEventListener('DOMContentLoaded', d, !1);
+      }
+    }(document, window);
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script crossorigin src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+</body>
+
+</html>
+<!--
+  *
+  * 　　　┏┓　　　┏┓
+  * 　　┏┛┻━━━┛┻┓
+  * 　　┃　　　　　　　┃
+  * 　　┃　　　━　　　┃
+  * 　　┃　┳┛　┗┳　┃
+  * 　　┃　　　　　　　┃
+  * 　　┃　　　┻　　　┃
+  * 　　┃　　　　　　　┃
+  * 　　┗━┓　　　┏━┛
+  * 　　　　┃　　　┃
+  * 　　　　┃　　　┃
+  * 　　　　┃　　　┗━━━┓
+  * 　　　　┃　　　　　 ┣┓
+  * 　　　　┃　　　　 ┏┛
+  * 　　　　┗┓┓┏━┳┓┏┛
+  * 　　　　　┃┫┫　┃┫┫
+  * 　　　　　┗┻┛　┗┻┛
+  *
+  * 　　Code is far away from bug with the animal protecting.
+ -->
