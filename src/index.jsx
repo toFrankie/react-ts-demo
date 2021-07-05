@@ -8,3 +8,12 @@ import Root from './root'
 
 const rootEl = document.getElementById('root')
 render(<Root />, rootEl)
+
+if (module.hot) {
+  module.hot.accept('./root', () => {
+    import('./root.jsx').then(module => {
+      const NextRoot = module.default
+      render(<NextRoot/>, rootEl)
+    })
+  })
+}

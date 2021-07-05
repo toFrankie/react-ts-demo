@@ -1,53 +1,18 @@
 import React, { useState, Component } from 'react'
+import Sub1 from './js/components/Sub1'
+import Sub2 from './js/components/Sub2'
 
-export default function Root(props) {
-  const [count, setCount] = useState(0)
+export default class Root extends Component {
+  state = {
+    name: 'Root'
+  }
 
-  return (
-    <div>
-      root element
-      <div>count: {count}</div>
-      <button
-        onClick={() => {
-          setCount(count + 1)
-        }}
-      >
-        Add
-      </button>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <Sub1 name="Frankie" />
+        <Sub2 name="Mandy" />
+      </div>
+    )
+  }
 }
-
-// class Sub extends Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       count: 0,
-//     }
-//     this.setCount = this.setCount.bind(this)
-//   }
-
-//   setCount() {
-//     this.setState({ count: this.state.count + 1 })
-//   }
-
-//   render() {
-//     return (
-//       <div>
-//         root element
-//         <div>count: {this.state.count}</div>
-//         <button onClick={this.setCount}>Add</button>
-//       </div>
-//     )
-//   }
-// }
-
-// export default class Root extends Component {
-//   state = {
-//     name: 'Root'
-//   }
-
-//   render() {
-//     return <Sub name="Frankie" />
-//   }
-// }
