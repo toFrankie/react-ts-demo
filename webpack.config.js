@@ -56,16 +56,25 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js|jsx$/,
-        exclude: /node_modules/,
-        use: [
+        oneOf: [
           {
-            loader: 'babel-loader',
-            options: {
-              // cacheDirectory: true,
-              plugins: [require.resolve('react-refresh/babel')]
-            }
-          }
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+          },
+          {
+            test: /\.jsx$/,
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: 'babel-loader',
+                options: {
+                  // cacheDirectory: true,
+                  plugins: [require.resolve('react-refresh/babel')]
+                }
+              }
+            ]
+          },
         ]
       }
     ]
