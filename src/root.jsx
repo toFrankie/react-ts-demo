@@ -1,18 +1,11 @@
-import React, { useState, Component } from 'react'
-import Sub1 from './js/components/Sub1'
-import Sub2 from './js/components/Sub2'
+import React from 'react'
+import { Sub1, Sub2 } from './js/components'
 
-export default class Root extends Component {
-  state = {
-    name: 'Root'
-  }
-
-  render() {
-    return (
-      <div>
-        <Sub1 name="Frankie" />
-        <Sub2 name="Mandy" />
-      </div>
-    )
-  }
+export default function Root() {
+  return (
+    <div>
+      <Sub1 name="Frankie" />
+      <Sub2 name="Mandy" />
+    </div>
+  )
 }

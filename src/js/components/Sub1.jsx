@@ -1,25 +1,7 @@
-import React, { useState, Component } from 'react'
+import { Component } from 'react'
 
-export default class Sub extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      count: 0,
-    }
-    this.setCount = this.setCount.bind(this)
-  }
-
-  setCount() {
-    this.setState({ count: this.state.count + 1 })
-  }
-
+export default class Sub1 extends Component {
   render() {
-    return (
-      <div>
-        <div>component: { this.props.name }</div>
-        <div>count: {this.state.count}</div>
-        <button onClick={this.setCount}>Add</button>
-      </div>
-    )
+    return <h1>Sub1 is class component.</h1>
   }
 }
