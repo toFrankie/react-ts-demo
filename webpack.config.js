@@ -6,7 +6,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 module.exports = {
   target: 'web',
-  mode: 'none',
+  mode: 'development',
   devtool: 'eval-source-map',
   entry: './src/index.jsx',
 
@@ -25,6 +25,7 @@ module.exports = {
     contentBase: false,
     publicPath: '/',
     open: true,
+    port: 8081,
     hot: true,
     // useLocalIp: true,
     compress: true
@@ -36,7 +37,6 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
 
     new CleanWebpackPlugin(),
@@ -62,7 +62,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              // cacheDirectory: true,
+              cacheDirectory: true,
               plugins: [require.resolve('react-refresh/babel')]
             }
           }
