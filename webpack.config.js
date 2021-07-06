@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   target: 'web',
@@ -50,13 +51,17 @@ module.exports = {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+
+    new ESLintPlugin({
+      fix: true // This option will change source files.
     })
   ],
 
   module: {
     rules: [
       {
-        test: /\.js|jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
           {
