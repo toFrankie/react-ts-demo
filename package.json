@@ -1,11 +1,19 @@
 {
-  "name": "react-ts",
+  "name": "react-ts-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toFrankie/react-ts-demo.git"
+  },
+  "main": "src/index.jsx",
+  "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack --progress --colors"
+    "build": "cross-env NODE_ENV=production webpack --progress --colors",
+    "eslint:fix": "eslint --fix ./ --ext .js,.jsx",
+    "prettier:fix": "prettier --write './**/*.{js,jsx,less,json}'"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -13,6 +21,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
     "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
@@ -21,7 +30,11 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "core-js": "^3.15.2",
     "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-alloy": "^4.1.0",
+    "eslint-plugin-react": "^7.24.0",
     "html-webpack-plugin": "^5.3.2",
+    "prettier": "^2.3.2",
     "react-refresh": "^0.10.0",
     "webpack": "^5.42.0",
     "webpack-cli": "^4.7.2",
