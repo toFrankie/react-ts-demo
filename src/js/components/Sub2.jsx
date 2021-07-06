@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 export default function Sub2(props) {
   const [count, setCount] = useState(0)

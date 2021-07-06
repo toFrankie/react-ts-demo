@@ -13,7 +13,7 @@
     "start": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack --progress --colors",
     "eslint:fix": "eslint --fix ./ --ext .js,.jsx",
-    "prettier:fix": "prettier --write './**/*.{js,jsx,less,json}'"
+    "prettier:fix": "prettier --write './**/*.{js,jsx,less,json,html}'"
   },
   "dependencies": {
     "react": "^17.0.2",
