@@ -26,9 +26,10 @@ module.exports = {
     contentBase: false,
     publicPath: '/',
     open: true,
-    port: 8081,
     hot: true,
-    // useLocalIp: true,
+    host: '0.0.0.0',
+    port: 8080,
+    useLocalIp: true,
     compress: true
   },
 
