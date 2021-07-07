@@ -1,0 +1,26 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+spaces_around_operators = true
+
+[*.js]
+quote_type = single
+trim_trailing_whitespace = true
+
+[.*rc]
+indent_size = 2
+indent_style = space
+
+[*.json]
+indent_size = 2
+indent_style = space
+
+[*.md]
+indent_style = space
+trim_trailing_whitespace = false

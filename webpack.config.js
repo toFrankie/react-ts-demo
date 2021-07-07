@@ -3,10 +3,11 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   target: 'web',
-  mode: 'none',
+  mode: 'development',
   devtool: 'eval-source-map',
   entry: './src/index.jsx',
 
@@ -25,6 +26,7 @@ module.exports = {
     contentBase: false,
     publicPath: '/',
     open: true,
+    port: 8081,
     hot: true,
     // useLocalIp: true,
     compress: true
@@ -32,11 +34,10 @@ module.exports = {
 
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json']
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
 
     new CleanWebpackPlugin(),
@@ -50,31 +51,26 @@ module.exports = {
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+
+    new ESLintPlugin({
+      fix: true // This option will change source files.
     })
   ],
 
   module: {
     rules: [
       {
-        oneOf: [
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
           {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-          },
-          {
-            test: /\.jsx$/,
-            exclude: /node_modules/,
-            use: [
-              {
-                loader: 'babel-loader',
-                options: {
-                  // cacheDirectory: true,
-                  plugins: [require.resolve('react-refresh/babel')]
-                }
-              }
-            ]
-          },
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              plugins: [require.resolve('react-refresh/babel')]
+            }
+          }
         ]
       }
     ]

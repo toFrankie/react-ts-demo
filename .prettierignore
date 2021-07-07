@@ -1,0 +1,21 @@
+# build
+node_modules
+build
+dist
+
+## OS
+.DS_Store
+.idea
+.editorconfig
+package-lock.json
+.npmrc
+
+# Ignored suffix
+*.log
+*.md
+*.svg
+*.png
+*ignore
+
+## Built-files
+.cache
