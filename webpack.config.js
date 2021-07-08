@@ -73,6 +73,26 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.less$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              modules: {
+                mode: 'local',
+                localIdentName: '[local]-[hash:4]',
+                exportLocalsConvention: 'camelCase'
+              }
+            }
+          },
+          'postcss-loader',
+          'less-loader'
+        ]
       }
     ]
   }
