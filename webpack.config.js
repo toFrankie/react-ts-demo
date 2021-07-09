@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
@@ -41,8 +40,6 @@ module.exports = {
 
   plugins: [
     new ReactRefreshWebpackPlugin(),
-
-    new CleanWebpackPlugin(),
 
     new HtmlWebpackPlugin({
       template: './src/index.html',
