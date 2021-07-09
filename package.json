@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack --progress --colors",
+    "build": "cross-env NODE_ENV=production webpack --progress",
     "eslint:fix": "eslint --fix ./ --ext .js,.jsx",
     "prettier:fix": "prettier --write './**/*.{js,jsx,less,json,html}'"
   },
@@ -32,7 +32,6 @@
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "core-js": "^3.15.2",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",

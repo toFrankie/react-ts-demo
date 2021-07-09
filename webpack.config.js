@@ -15,7 +15,8 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     filename: '[name].bundle.js',
-    chunkFilename: '[chunkhash].bundle.js' // non-entry
+    chunkFilename: '[chunkhash].bundle.js', // non-entry
+    clean: true
   },
 
   optimization: {
