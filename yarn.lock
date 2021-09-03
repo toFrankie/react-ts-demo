@@ -2290,6 +2290,11 @@ eslint-config-alloy@^4.1.0:
   resolved "https://registry.nlark.com/eslint-config-alloy/download/eslint-config-alloy-4.1.0.tgz#3d5df5d139fb27797943c36e91945be5b300886e"
   integrity sha1-PV310Tn7J3l5Q8NukZRb5bMAiG4=
 
+eslint-plugin-react-hooks@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.nlark.com/eslint-plugin-react-hooks/download/eslint-plugin-react-hooks-4.2.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-plugin-react-hooks%2Fdownload%2Feslint-plugin-react-hooks-4.2.0.tgz#8c229c268d468956334c943bb45fc860280f5556"
+  integrity sha1-jCKcJo1GiVYzTJQ7tF/IYCgPVVY=
+
 eslint-plugin-react@^7.24.0:
   version "7.24.0"
   resolved "https://registry.nlark.com/eslint-plugin-react/download/eslint-plugin-react-7.24.0.tgz?cache=0&sync_timestamp=1622319784610&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-plugin-react%2Fdownload%2Feslint-plugin-react-7.24.0.tgz#eadedfa351a6f36b490aa17f4fa9b14e842b9eb4"
