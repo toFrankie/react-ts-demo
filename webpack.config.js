@@ -7,7 +7,7 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 module.exports = {
   target: 'web',
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-source-map',
   entry: './src/index.jsx',
 
   output: {
@@ -30,7 +30,8 @@ module.exports = {
     host: '0.0.0.0',
     port: 8080,
     useLocalIp: true,
-    compress: true
+    compress: true,
+    historyApiFallback: true
   },
 
   resolve: {
@@ -47,6 +48,11 @@ module.exports = {
       inject: true,
       hash: true
     }),
+
+    // Automatically load modules instead of having to import or require them everywhere.
+    // new webpack.ProvidePlugin({
+    //   React: 'React'
+    // }),
 
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
