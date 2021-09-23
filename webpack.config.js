@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const apiMocker = require('mocker-api')
 
 module.exports = {
   target: 'web',
@@ -31,7 +32,10 @@ module.exports = {
     port: 8080,
     useLocalIp: true,
     compress: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    before: app => {
+      apiMocker(app, path.resolve(__dirname, './mocker/index.js'))
+    }
   },
 
   resolve: {
