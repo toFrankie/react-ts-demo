@@ -1,12 +1,10 @@
 import React, { useState, useEffect, Component } from 'react'
 import { NavLink, Route, Redirect } from 'react-router-dom'
 import style from './index.less'
-import connect from '../../store/connect'
 
-@connect
-export default class Home extends Component {
-  componentDidMount() {
-    // fetch('/user')
+export default function Home() {
+  useEffect(() => {
+    // fetch('/user', { credentials: 'include' })
     fetch('/login', {
       method: 'POST',
       headers: {
@@ -14,6 +12,7 @@ export default class Home extends Component {
         // 'Content-Type': 'application/json'
         'Content-Type': 'application/x-www-form-urlencoded'
       },
+      credentials: 'include',
       // body: JSON.stringify({ username: 'Frankie', password: '123' })
       body: 'username=Frankie&password=123'
     })
@@ -25,27 +24,12 @@ export default class Home extends Component {
       .catch(err => {
         console.warn(err)
       })
-  }
+  }, [])
 
-  render() {
-    return (
-      <div className={style.container}>
-        文本节点
-        <h3>This is Home Page.</h3>
-        <NavLink to="/mine">To Mine</NavLink>
-        <button
-          onClick={() => {
-            // window.location.hash = 'mine'
-            // this.props.history.goForward('mine')
-            this.props.history.push('mine')
-          }}
-        >
-          To Mine
-        </button>
-        <h2>Other Router...</h2>
-        <button onClick={this.props.inc}>+</button>
-        <button onClick={this.props.dec}>-</button>
-      </div>
-    )
-  }
+  return (
+    <div className={style.container}>
+      <h3>This is Home Page.</h3>
+      <NavLink to="/mine">To Mine</NavLink>
+    </div>
+  )
 }
