@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   parser: '@babel/eslint-parser',
-  extends: ['alloy', 'alloy/react', 'plugin:react-hooks/recommended'],
+  extends: ['alloy', 'alloy/react', 'alloy/typescript', 'plugin:react-hooks/recommended'],
   plugins: ['react-hooks'],
   settings: {
     react: {

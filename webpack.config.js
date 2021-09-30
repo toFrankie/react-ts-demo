@@ -9,7 +9,7 @@ module.exports = {
   target: 'web',
   mode: 'development',
   devtool: 'cheap-module-source-map',
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
 
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -20,7 +20,8 @@ module.exports = {
   },
 
   optimization: {
-    moduleIds: 'named'
+    moduleIds: 'named',
+    usedExports: true,
   },
 
   devServer: {
@@ -40,7 +41,7 @@ module.exports = {
 
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', 'ts', '.jsx', 'tsx', '.json']
   },
 
   plugins: [
@@ -70,7 +71,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: [
           {
