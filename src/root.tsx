@@ -4,14 +4,6 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import store from './js/store'
 import { Home, Mine, Chat } from './js/pages'
 
-export default function Root() {
-  return (
-    <Provider store={store}>
-      <Routes />
-    </Provider>
-  )
-}
-
 function Routes() {
   return (
     <BrowserRouter>
@@ -24,5 +16,13 @@ function Routes() {
         {/* <Route component={NotFoundPage} /> */}
       </Switch>
     </BrowserRouter>
+  )
+}
+
+export default function Root() {
+  return (
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   )
 }
